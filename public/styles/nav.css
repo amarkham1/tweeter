@@ -1,0 +1,23 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding: 1.5em;
+}
+
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bungee {
+  font-family: 'Bungee', cursive;
+  font-size: 32px;
+}
+
+.nav-new-tweet {
+  font-size: 24px;
+}
