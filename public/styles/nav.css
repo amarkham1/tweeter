@@ -1,12 +1,12 @@
 .nav {
-  height: 120px;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0px;
   z-index: 1;
   background-color: #4056a1;
   color: #FFFFFF;
-  padding: 1.5em;
+  padding: 1em;
   display: flex;
   justify-content: center;
 }
