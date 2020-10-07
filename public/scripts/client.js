@@ -78,14 +78,21 @@ $(document).ready(() => {
   };
 
   loadTweets();
-  
+
   $('form').on('submit', function(event) {
     event.preventDefault();
-    const data = $(this).serialize();
-
-    $.ajax('/tweets/', { method: 'POST', data })
-    .then(function (newTweet) {
-      console.log('Success');
-    });
+    $(".error").remove();
+    const tweetText = $('#tweet-text').val();
+    if (tweetText.length === 0) {
+      $('.new-tweet').append('<div class="error">Cannot submit an empty tweet!</div>');
+    } else if (tweetText.length > 140) {
+      $('.new-tweet').append('<div class="error">Exceeded character limit!</div>');
+    } else {
+      const data = $(this).serialize();
+      $.ajax('/tweets/', { method: 'POST', data })
+      .then(function (newTweet) {
+        console.log('Success');
+      });
+    }
   });
 });
