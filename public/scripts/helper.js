@@ -13,7 +13,6 @@ const loadTweets = function() {
 };
 
 const emptyTextArea = textarea => $(textarea).val("");
-//const clearCharCount = counter => counter.text();
 const sortTweetsByCreationDate = tweetArray => tweetArray.sort((a, b) => b["created_at"] - a["created_at"]);
 
 const renderTweets = tweetArray => {
