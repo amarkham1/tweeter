@@ -39,41 +39,35 @@ $(document).ready(() => {
   }
 
   const createTweetElement = tweet => {
-    // creation of header element
-    const avatarSpan = $('<span>').addClass("tweet__avatar");
-    const avatar = $('<img>').attr("src", tweet.user.avatars).attr("width", "40px");
-    avatarSpan.append(avatar);
-    const name = $('<span>').text(tweet.user.name).addClass("tweet__name");
-    const headerDiv = $('<div>').addClass("tweet__user").append(avatarSpan).append(name);
-    const handle = $('<span>').addClass("tweet__handle").text(tweet.user.handle);
-    const header= $('<header>').addClass("tweet__article-header").append(headerDiv).append(handle);
+    const header = `<header class="tweet__article-header">
+                      <div class="tweet__user">
+                        <span class="tweet__avatar">
+                          <img src="${tweet.user.avatars}" width="40px" />
+                        </span>
+                        <span class="tweet__name">${tweet.user.name}</span>
+                      </div>
+                      <span class="tweet__handle">${tweet.user.handle}</span>
+                    </header>`;
   
-    // creation of tweet body
-    const body = $('<div>').addClass("tweet__body").text(tweet.content.text);
+    const body = `<div class="tweet__body">${tweet.content.text}</div>`;
   
-    // creation of footer icons
-    const flag = $('<span>').addClass("tweet__button tweet__button--flag");
-    const flagIcon = $('<i>').addClass("fas fa-flag");
-    flag.append(flagIcon);
-    const retweet = $('<span>').addClass("tweet__button tweet__button--retweet");
-    const retweetIcon = $('<i>').addClass("fas fa-retweet");
-    retweet.append(retweetIcon);
-    const heart = $('<span>').addClass("tweet__button tweet__button--heart");
-    const heartIcon = $('<i>').addClass("fas fa-heart");
-    heart.append(heartIcon);
-    const buttonDiv = $('<div>').addClass("tweet__buttons").append(flag).append(retweet).append(heart);
-  
-    // creation of footer
+    // calculate the number of days since the creation date
     const currentDate = new Date();
     const dateDiffInMS = currentDate - tweet['created_at'];
     const dateDiffInDays = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24));
-    const creationSpan = $('<span>').addClass("tweet__creation-date").text(dateDiffInDays + " days ago");
-    const footer = $('<footer>').addClass("tweet__article-footer").append(creationSpan).append(buttonDiv);
+
+    // create the footer
+    const footer = `<footer class="tweet__article-footer">
+                      <span class="tweet__creation-date">${dateDiffInDays} days ago</span>
+                      <div class="tweet__buttons">
+                        <span class="tweet__button tweet__button-flag"><i class="fas fa-flag"></i></span>
+                        <span class="tweet__button tweet__button-retweet"><i class="fas fa-retweet"></i></span>
+                        <span class="tweet__button tweet__button-heart"><i class="fas fa-heart"></i></span>
+                      </div>
+                    </footer>`;
   
-    // put the header, body, and footer together
-    const $article = $('<article>').addClass("tweet").append(header).append(body).append(footer);
-  
-    return $article;
+    const article = $('<article>').addClass("tweet").append(header).append(body).append(footer);
+    return article;
   };
   
   
