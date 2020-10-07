@@ -25,4 +25,12 @@ $(document).ready(() => {
     }
   });
 
+  $('.nav__new-tweet-container').on('click', function(event) {
+    if ($('form').is(':visible')) {
+      $('form').slideUp();
+    } else {
+      $('form').slideDown();
+    }
+  });
+
 });
