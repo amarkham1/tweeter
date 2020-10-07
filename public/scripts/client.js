@@ -60,9 +60,9 @@ $(document).ready(() => {
     const footer = `<footer class="tweet__article-footer">
                       <span class="tweet__creation-date">${dateDiffInDays} days ago</span>
                       <div class="tweet__buttons">
-                        <span class="tweet__button tweet__button-flag"><i class="fas fa-flag"></i></span>
-                        <span class="tweet__button tweet__button-retweet"><i class="fas fa-retweet"></i></span>
-                        <span class="tweet__button tweet__button-heart"><i class="fas fa-heart"></i></span>
+                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-retweet"></i>
+                        <i class="fas fa-heart"></i>
                       </div>
                     </footer>`;
   
