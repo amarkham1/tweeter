@@ -1,9 +1,11 @@
+// called when a new tweet is successfully submitted
 const reloadAndClearForm = function() {
   loadTweets();
   emptyTextArea('#tweet-text');
   $('.counter').text(140);
 }
 
+// renders tweets by nearest creation date
 const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' })
   .then(function (tweets) {
@@ -55,6 +57,7 @@ const createTweetElement = tweet => {
   return article;
 };
 
+// returns a string representing the number of years/months/days/hours/minutes since a tweet creation date
 const timeSinceDate = dateInMS => {
   const currentDate = new Date();
   const dateDiffInMS = currentDate - dateInMS;
