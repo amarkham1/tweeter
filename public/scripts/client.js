@@ -17,7 +17,8 @@ $(document).ready(() => {
       $.ajax('/tweets/', { method: 'POST', data })
       .then(function (newTweet) {
         loadTweets();
-        $('#tweet-text').val("");
+        emptyTextArea('#tweet-text');
+        // also clears char limit counter on form submit (via composer-char-counter.js)
       });
     }
   });
@@ -30,7 +31,8 @@ $(document).ready(() => {
     });
   };
 
-
+  const emptyTextArea = textarea => $(textarea).val("");
+  //const clearCharCount = counter => counter.text();
   const sortTweetsByCreationDate = tweetArray => tweetArray.sort((a, b) => b["created_at"] - a["created_at"]);
 
   const renderTweets = tweetArray => {
