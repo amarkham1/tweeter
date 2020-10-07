@@ -9,9 +9,11 @@ $(document).ready(() => {
     $(".new-tweet__error").remove();
     const tweetText = $('#tweet-text').val();
     if (tweetText.length === 0) {
-      $('.new-tweet').append('<div class="new-tweet__error"><i class="fas fa-exclamation-triangle"></i>  Cannot submit an empty tweet!</div>');
+      const errorHTML = $('<div class="new-tweet__error"><i class="fas fa-exclamation-triangle"></i>  Cannot submit an empty tweet!</div>');
+      errorHTML.appendTo('.new-tweet').show("slow");
     } else if (tweetText.length > 140) {
-      $('.new-tweet').append('<div class="new-tweet__error"><i class="fas fa-exclamation-triangle"></i>  Exceeded character limit!</div>');
+      const errorHTML = $('<div class="new-tweet__error"><i class="fas fa-exclamation-triangle"></i>  Exceeded character limit!</div>');
+      errorHTML.appendTo('.new-tweet').show("slow");
     } else {
       const data = $(this).serialize();
       $.ajax('/tweets/', { method: 'POST', data })
