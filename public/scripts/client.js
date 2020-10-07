@@ -25,8 +25,7 @@ $(document).ready(() => {
     }
   });
 
-  // clicking on the "Write a new tweet" nav item hides and unhides the "new tweet" form
-  $('.nav__new-tweet-container').on('click', function() {
+  $('.nav__new-tweet-container').on('click', function(event) {
     if ($('form').is(':visible')) {
       $('form').slideUp();
     } else {
@@ -35,7 +34,6 @@ $(document).ready(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // scrolling below 400px from the top causes the back-to-top button to appear
   $(document).scroll(function() {
     if ($(this).scrollTop() > 0) {
       $('.button-to-top').removeAttr('hidden');
@@ -43,7 +41,6 @@ $(document).ready(() => {
       $('.button-to-top').attr('hidden', 'true');
     }
   });
-
   // clicking the back-to-top button brings you to the top of the page and shows the new tweet form
   $('.button-to-top').on('click', function(event) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
