@@ -35,4 +35,19 @@ main.container {
   align-items: center;
 }
 
+.button-to-top {
+  background-color: #c33;
+  border: 0;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  cursor: pointer;
+  outline: none;
+}
 
+.fa-angle-double-up {
+  color: white;
+}

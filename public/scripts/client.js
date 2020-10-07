@@ -31,6 +31,14 @@ $(document).ready(() => {
     } else {
       $('form').slideDown();
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  $(document).scroll(function() {
+    if ($(this).scrollTop() > 400) {
+      $('.button-to-top').removeAttr('hidden');
+    } else {
+      $('.button-to-top').attr('hidden', 'true');
+    }
+  });
 });
