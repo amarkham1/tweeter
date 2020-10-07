@@ -26,6 +26,8 @@ body {
 
 main {
   width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f4f1ec;
 }
 
@@ -50,4 +52,10 @@ main.container {
 
 .fa-angle-double-up {
   color: white;
+}
+
+@media (max-width: 1050px) {
+  main {
+    width: calc(100% - 50px);
+  }
 }
