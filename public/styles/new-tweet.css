@@ -40,7 +40,16 @@
   color: #545149;
 }
 
-.error {
-  color: red;
+.new-tweet__error {
+  color: #c33;
   font-size: 22px;
+  background-color: #fee;
+  vertical-align: middle;
+  padding-left: 10px;
+  line-height: 1.5em;  
+  height: 1.5em;
+}
+
+.new-tweet__error > .fas {
+  color: red;
 }

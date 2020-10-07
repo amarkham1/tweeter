@@ -65,6 +65,6 @@
   font-size: 14px;
 }
 
-.fas {
+.tweet__buttons > .fas {
   color: rgb(113, 157, 227);
 }

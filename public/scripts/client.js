@@ -6,12 +6,12 @@
 $(document).ready(() => {  
   $('form').on('submit', function(event) {
     event.preventDefault();
-    $(".error").remove();
+    $(".new-tweet__error").remove();
     const tweetText = $('#tweet-text').val();
     if (tweetText.length === 0) {
-      $('.new-tweet').append('<div class="error">Cannot submit an empty tweet!</div>');
+      $('.new-tweet').append('<div class="new-tweet__error"><i class="fas fa-exclamation-triangle"></i>  Cannot submit an empty tweet!</div>');
     } else if (tweetText.length > 140) {
-      $('.new-tweet').append('<div class="error">Exceeded character limit!</div>');
+      $('.new-tweet').append('<div class="new-tweet__error"><i class="fas fa-exclamation-triangle"></i>  Exceeded character limit!</div>');
     } else {
       const data = $(this).serialize();
       $.ajax('/tweets/', { method: 'POST', data })
