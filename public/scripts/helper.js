@@ -56,7 +56,6 @@ const createTweetElement = tweet => {
 };
 
 const timeSinceDate = dateInMS => {
-  let timeBetween;
   const currentDate = new Date();
   const dateDiffInMS = currentDate - dateInMS;
   const dateDiffInYears = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24 * 365));
@@ -65,17 +64,16 @@ const timeSinceDate = dateInMS => {
   const dateDiffInHours = Math.floor(dateDiffInMS / (1000 * 60 * 60));
   const dateDiffInMinutes = Math.floor(dateDiffInMS / (1000 * 60));
   if (dateDiffInYears > 0) {
-    timeBetween = dateDiffInYears + " year(s) ago";
+    return dateDiffInYears + " year(s) ago";
   } else if (dateDiffInMonths > 0) {
-    timeBetween = dateDiffInMonths + " month(s) ago";
+    return dateDiffInMonths + " month(s) ago";
   } else if (dateDiffInDays > 0) {
-    timeBetween = dateDiffInDays + " day(s) ago";
+    return dateDiffInDays + " day(s) ago";
   } else if (dateDiffInHours > 0) {
-    timeBetween = dateDiffInHours + " hour(s) ago";
+    return dateDiffInHours + " hour(s) ago";
   } else if (dateDiffInMinutes >= 0) {
-    timeBetween = dateDiffInMinutes + " minute(s) ago";
+    return dateDiffInMinutes + " minute(s) ago";
   } else {
-    timeBetween = "";
+    return "";
   }
-  return timeBetween;
 }
