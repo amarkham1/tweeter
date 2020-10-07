@@ -70,7 +70,12 @@ $(document).ready(() => {
     return article;
   };
   
-  
+  $('form').on('submit', function(event) {
+    const content = $('#tweet-text').val();
+    event.preventDefault();
+    console.log("prevented!", content);
+  });
+
   // Test / driver code (temporary)
   renderTweets(data);
 
