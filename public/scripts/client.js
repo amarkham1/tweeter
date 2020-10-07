@@ -5,7 +5,6 @@
  */
 $(document).ready(() => {
   const renderTweets = tweetArray => {
-    $('.all-tweets-container').empty();
     const tweets = $('<div>').addClass("all-tweets");
     for (const tweet of tweetArray) {
       const tweetArticle = createTweetElement(tweet);
@@ -14,6 +13,30 @@ $(document).ready(() => {
     $('.all-tweets-container').append(tweets);
   }
 
+  const timeBetweenTwoDates = dateInMS => {
+    let timeBetween;
+    const currentDate = new Date();
+    const dateDiffInMS = currentDate - dateInMS;
+    const dateDiffInYears = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24 * 365));
+    const dateDiffInMonths = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24 * (365 / 12)));
+    const dateDiffInDays = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24));
+    const dateDiffInHours = Math.floor(dateDiffInMS / (1000 * 60 * 60));
+    const dateDiffInMinutes = Math.floor(dateDiffInMS / (1000 * 60));
+    if (dateDiffInYears > 0) {
+      timeBetween = dateDiffInYears + " year(s) ago";
+    } else if (dateDiffInMonths > 0) {
+      timeBetween = dateDiffInMonths + " month(s) ago";
+    } else if (dateDiffInDays > 0) {
+      timeBetween = dateDiffInDays + " day(s) ago";
+    } else if (dateDiffInHours > 0) {
+      timeBetween = dateDiffInHours + " hour(s) ago";
+    } else if (dateDiffInMinutes >= 0) {
+      timeBetween = dateDiffInMinutes + " minute(s) ago";
+    } else {
+      timeBetween = "";
+    }
+    return timeBetween;
+  }
   const createTweetElement = tweet => {
     const header = `<header class="tweet__article-header">
                       <div class="tweet__user">
@@ -27,28 +50,8 @@ $(document).ready(() => {
   
     const body = `<div class="tweet__body">${tweet.content.text}</div>`;
   
-    // calculate the number of days since the creation date
-    const currentDate = new Date();
-    const dateDiffInMS = currentDate - tweet['created_at'];
-    const dateDiffInYears = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24 * 365));
-    const dateDiffInMonths = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24 * (365 / 12)));
-    const dateDiffInDays = Math.floor(dateDiffInMS / (1000 * 60 * 60 * 24));
-    const dateDiffInHours = Math.floor(dateDiffInMS / (1000 * 60 * 60));
-    const dateDiffInMinutes = Math.floor(dateDiffInMS / (1000 * 60));
-    let dateDiff;
-    if (dateDiffInYears > 0) {
-      dateDiff = dateDiffInYears + " year(s) ago";
-    } else if (dateDiffInMonths > 0) {
-      dateDiff = dateDiffInMonths + " month(s) ago";
-    } else if (dateDiffInDays > 0) {
-      dateDiff = dateDiffInDays + " day(s) ago";
-    } else if (dateDiffInHours > 0) {
-      dateDiff = dateDiffInHours + " hour(s) ago";
-    } else if (dateDiffInMinutes >= 0) {
-      dateDiff = dateDiffInMinutes + " minute(s) ago";
-    } else {
-      dateDiff = "";
-    }
+    // calculate the amount of time since the creation date
+    const dateDiff = timeBetweenTwoDates(tweet['created_at']);
 
     // create the footer
     const footer = `<footer class="tweet__article-footer">
@@ -67,6 +70,7 @@ $(document).ready(() => {
   const sortTweetsByCreationDate = tweetArray => tweetArray.sort((a, b) => b["created_at"] - a["created_at"]);
 
   const loadTweets = function() {
+    $('.all-tweets-container').empty();
     $.ajax('/tweets/', { method: 'GET' })
     .then(function (tweets) {
       const sortedTweets = sortTweetsByCreationDate(tweets);
@@ -88,7 +92,6 @@ $(document).ready(() => {
       const data = $(this).serialize();
       $.ajax('/tweets/', { method: 'POST', data })
       .then(function (newTweet) {
-        console.log(newTweet);
         $.ajax('/tweets/', { method: 'GET' })
         .then(function (tweets) {
           const sortedTweets = sortTweetsByCreationDate(tweets);
