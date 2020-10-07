@@ -70,13 +70,22 @@ $(document).ready(() => {
     return article;
   };
   
+  const loadTweets = function() {
+    $.ajax('/tweets/', { method: 'GET' })
+    .then(function (tweets) {
+      renderTweets(tweets);
+    });
+  };
+
+  loadTweets();
+  
   $('form').on('submit', function(event) {
-    const content = $('#tweet-text').val();
     event.preventDefault();
-    console.log("prevented!", content);
+    const data = $(this).serialize();
+
+    $.ajax('/tweets/', { method: 'POST', data })
+    .then(function (newTweet) {
+      console.log('Success');
+    });
   });
-
-  // Test / driver code (temporary)
-  renderTweets(data);
-
 });
