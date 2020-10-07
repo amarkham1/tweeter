@@ -1,10 +1,6 @@
 $(document).ready(function() {
-  const CHARLIMIT = 140;
-  $('form').on('submit', function() {
-    $('.counter').text(CHARLIMIT);
-  });
   $('#tweet-text').on('input', function() {
-    let remainingChars = CHARLIMIT - this.value.length;
+    let remainingChars = 140 - this.value.length;
     let counterOutput = $(this).parent().parent().children('.new-tweet__submit-container').children('.counter');
     counterOutput.text(remainingChars);
     if (remainingChars < 0) {

@@ -1,6 +1,6 @@
 .new-tweet {
   width: 100%;
-  margin: 0 40px 40px 40px;
+  margin: 0 40px 60px 40px;
 }
 
 .new-tweet__submit-container {
@@ -49,6 +49,7 @@
   padding-left: 10px;
   line-height: 1.5em;  
   height: 1.5em;
+  position: absolute;
 }
 
 .new-tweet__error > .fas {
