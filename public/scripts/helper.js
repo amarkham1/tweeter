@@ -1,7 +1,6 @@
 // called when a new tweet is successfully submitted
-const reloadAndClearForm = function() {
+const reloadAndResetCounter = function() {
   loadTweets();
-  emptyTextArea('#tweet-text');
   $('.counter').text(140);
 };
 

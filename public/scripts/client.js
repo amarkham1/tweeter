@@ -18,9 +18,10 @@ $(document).ready(() => {
       errorHTML.prependTo('.new-tweet').slideDown();
     } else {
       const data = $(this).serialize();
+      emptyTextArea('#tweet-text');
       $.ajax('/tweets/', { method: 'POST', data })
         .then(function(newTweet) {
-          reloadAndClearForm();
+          reloadAndResetCounter();
         });
     }
   });
