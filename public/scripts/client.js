@@ -3,8 +3,18 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(() => {
+$(document).ready(() => {  
+  
+  const loadTweets = function() {
+  $.ajax('/tweets/', { method: 'GET' })
+  .then(function (tweets) {
+    const sortedTweets = sortTweetsByCreationDate(tweets);
+    renderTweets(sortedTweets);
+  });
+};
+
   const renderTweets = tweetArray => {
+    $('.all-tweets-container').empty();
     const tweets = $('<div>').addClass("all-tweets");
     for (const tweet of tweetArray) {
       const tweetArticle = createTweetElement(tweet);
@@ -13,7 +23,7 @@ $(document).ready(() => {
     $('.all-tweets-container').append(tweets);
   }
 
-  const timeBetweenTwoDates = dateInMS => {
+  const timeSinceDate = dateInMS => {
     let timeBetween;
     const currentDate = new Date();
     const dateDiffInMS = currentDate - dateInMS;
@@ -37,6 +47,7 @@ $(document).ready(() => {
     }
     return timeBetween;
   }
+
   const createTweetElement = tweet => {
     const header = `<header class="tweet__article-header">
                       <div class="tweet__user">
@@ -51,7 +62,7 @@ $(document).ready(() => {
     const body = `<div class="tweet__body">${tweet.content.text}</div>`;
   
     // calculate the amount of time since the creation date
-    const dateDiff = timeBetweenTwoDates(tweet['created_at']);
+    const dateDiff = timeSinceDate(tweet['created_at']);
 
     // create the footer
     const footer = `<footer class="tweet__article-footer">
@@ -69,15 +80,6 @@ $(document).ready(() => {
   
   const sortTweetsByCreationDate = tweetArray => tweetArray.sort((a, b) => b["created_at"] - a["created_at"]);
 
-  const loadTweets = function() {
-    $('.all-tweets-container').empty();
-    $.ajax('/tweets/', { method: 'GET' })
-    .then(function (tweets) {
-      const sortedTweets = sortTweetsByCreationDate(tweets);
-      renderTweets(sortedTweets);
-    });
-  };
-
   loadTweets();
 
   $('form').on('submit', function(event) {
@@ -92,11 +94,7 @@ $(document).ready(() => {
       const data = $(this).serialize();
       $.ajax('/tweets/', { method: 'POST', data })
       .then(function (newTweet) {
-        $.ajax('/tweets/', { method: 'GET' })
-        .then(function (tweets) {
-          const sortedTweets = sortTweetsByCreationDate(tweets);
-          renderTweets(sortedTweets);
-        });
+        loadTweets();
       });
     }
   });
