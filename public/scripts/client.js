@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(() => {  
+$(document).ready(() => {
   loadTweets();
 
   $('form').on('submit', function(event) {
@@ -19,9 +19,9 @@ $(document).ready(() => {
     } else {
       const data = $(this).serialize();
       $.ajax('/tweets/', { method: 'POST', data })
-      .then(function (newTweet) {
-        reloadAndClearForm();
-      });
+        .then(function(newTweet) {
+          reloadAndClearForm();
+        });
     }
   });
 
@@ -37,13 +37,14 @@ $(document).ready(() => {
 
   // scrolling below 400px from the top causes the back-to-top button to appear
   $(document).scroll(function() {
-    if ($(this).scrollTop() > 400) {
+    if ($(this).scrollTop() > 0) {
       $('.button-to-top').removeAttr('hidden');
     } else {
       $('.button-to-top').attr('hidden', 'true');
     }
   });
 
+  // clicking the back-to-top button brings you to the top of the page and shows the new tweet form
   $('.button-to-top').on('click', function(event) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     $('form').slideDown();

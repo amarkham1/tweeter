@@ -3,15 +3,15 @@ const reloadAndClearForm = function() {
   loadTweets();
   emptyTextArea('#tweet-text');
   $('.counter').text(140);
-}
+};
 
 // renders tweets by nearest creation date
 const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' })
-  .then(function (tweets) {
-    const sortedTweets = sortTweetsByCreationDate(tweets);
-    renderTweets(sortedTweets);
-  });
+    .then(function(tweets) {
+      const sortedTweets = sortTweetsByCreationDate(tweets);
+      renderTweets(sortedTweets);
+    });
 };
 
 const emptyTextArea = textarea => $(textarea).val("");
@@ -25,7 +25,7 @@ const renderTweets = tweetArray => {
     tweets.append(tweetArticle);
   }
   $('.all-tweets-container').append(tweets);
-}
+};
 
 const createTweetElement = tweet => {
   const header = `<header class="tweet__article-header">
@@ -79,4 +79,4 @@ const timeSinceDate = dateInMS => {
   } else {
     return "";
   }
-}
+};
