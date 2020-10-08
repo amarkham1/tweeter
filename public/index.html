@@ -37,36 +37,36 @@
       </div>
     </nav>
 
-    <header class="main-header">
-      <div>
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div class="main-header__name">
-        <strong>Andrew</strong> M
-      </div>
-    </header>
+    <div class="content-container">
+      <header class="main-header">
+        <div>
+          <img src="/images/profile-hex.png">
+        </div>
+        <br>
+        <div class="main-header__name">
+          <strong>Andrew</strong> M
+        </div>
+      </header>
 
-    <div id="#anchor-point"></div>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <form action="/tweets" method="POST">
-          <div class="new-tweet__container">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text" placeholder="Enter your tweet here"></textarea>
-          </div>
-          <div class="new-tweet__submit-container">
-            <button class="new-tweet__button" type="submit">Tweet</button>
-            <output name="counter" class="counter new-tweet__black" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section class="all-tweets-container">
-        <!-- fetches from client.js -->
-      </section>
-      <button class="button-to-top" hidden="true"><i class="fas fa-angle-double-up"></i></button>
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <form action="/tweets" method="POST">
+            <div class="new-tweet__container">
+              <label for="tweet-text">What are you humming about?</label>
+              <textarea name="text" id="tweet-text" placeholder="Enter your tweet here"></textarea>
+            </div>
+            <div class="new-tweet__submit-container">
+              <button class="new-tweet__button" type="submit">Tweet</button>
+              <output name="counter" class="counter new-tweet__black" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="all-tweets-container">
+          <!-- fetches from client.js -->
+        </section>
+        <button class="button-to-top" hidden="true"><i class="fas fa-angle-double-up"></i></button>
+      </main>
+    </div>
   </body>
 </html>
