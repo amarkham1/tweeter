@@ -89,4 +89,4 @@ const getErrorHTML = message => {
             ${message}
             <i class="fas fa-exclamation-triangle"></i>
           </div>`);
-}
+};
