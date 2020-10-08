@@ -85,7 +85,8 @@
 
 .nav__new-tweet {
   border: none;
-  background-color: #4056a1;
+  background-color: #fca000;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
   color: #f4f1ec;
   text-decoration: none;
   font-size: 22px;
@@ -150,6 +151,11 @@
 }
 @media (min-width: 768px) {
   .nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
+
+  .nav__new-tweet {
     background-color: #4056a1;
     background-image: none;
   }
