@@ -6,6 +6,7 @@
 $(document).ready(() => {
   loadTweets();
 
+  // AJAX request and validation upon new tweet submit
   $('form').on('submit', function(event) {
     event.preventDefault();
     const tweetText = $('#tweet-text').val();
@@ -29,6 +30,7 @@ $(document).ready(() => {
     }
   });
 
+  // Navigation bar new tweet button functionality
   $('.nav__new-tweet-container').on('click', function(event) {
     if ($('form').is(':visible')) {
       $('form').slideUp();
@@ -38,6 +40,7 @@ $(document).ready(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // Scrolling down causes back-to-top button to appear
   $(document).scroll(function() {
     if ($(this).scrollTop() > 0) {
       $('.button-to-top').removeAttr('hidden');
@@ -45,6 +48,7 @@ $(document).ready(() => {
       $('.button-to-top').attr('hidden', 'true');
     }
   });
+
   // clicking the back-to-top button brings you to the top of the page and shows the new tweet form
   $('.button-to-top').on('click', function(event) {
     window.scrollTo({ top: 0, behavior: 'smooth' });

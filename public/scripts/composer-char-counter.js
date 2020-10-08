@@ -10,6 +10,7 @@ $(document).ready(function() {
       counterOutput.removeClass("new-tweet__red");
       counterOutput.addClass("new-tweet__black");
     }
+    // inputting text changes height of the textarea so a scroller doesn't appear
     $(this).css("height", "");
     $(this).css("height", this.scrollHeight + 3 + "px");
   });

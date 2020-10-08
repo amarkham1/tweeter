@@ -29,6 +29,7 @@ const renderTweets = tweetArray => {
   $('.all-tweets-container').append(tweets);
 };
 
+// build-up of the HTML for a new tweet
 const createTweetElement = tweet => {
   const header = `<header class="tweet__article-header">
                     <div class="tweet__user">
@@ -83,6 +84,7 @@ const timeSinceDate = dateInMS => {
   }
 };
 
+// build-up of HTML with error message
 const getErrorHTML = message => {
   return $(`<div class="new-tweet__error">
             <i class="fas fa-exclamation-triangle"></i>

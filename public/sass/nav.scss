@@ -17,6 +17,7 @@
   @include flexbox(column, center, center);
 }
 
+// TWEETER logo
 .nav__bungee {
   font-family: 'Bungee', cursive;
   font-size: 32px;
@@ -36,6 +37,7 @@
   cursor: pointer;
 }
 
+// new tweet button
 .nav__new-tweet-container {
   @include flexbox(column, center, center);
   padding: 10px 10px 0 10px;
@@ -43,7 +45,7 @@
 
 .nav__new-tweet-container:hover {
   cursor: pointer;
-  
+
   .fa-angle-double-down {
     -webkit-animation: mover 0.5s infinite  alternate;
     animation: mover 0.5s infinite  alternate;
@@ -59,6 +61,7 @@
   color: $red;
 }
 
+// moves the new tweet double arrow up and down
 @-webkit-keyframes mover {
   0% { transform: translateY(0); }
   100% { transform: translateY(-5px); }
