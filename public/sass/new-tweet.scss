@@ -1,0 +1,62 @@
+@use 'layout';
+
+.new-tweet {
+  width: 100%;
+  margin: 20px 40px 60px 40px;
+  position: relative;
+}
+
+.new-tweet__submit-container {
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 10px 0;
+}
+
+.new-tweet__button {
+  background-color: layout.$blue;
+  border: 0;
+  color: white;
+}
+
+.new-tweet__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+#tweet-text {
+  border-width: 0 0 3px 0;
+  border-style: solid;
+  border-color: layout.$black;
+  background-color: layout.$off-white;
+  resize: none;
+  outline: none;
+  height: 1.5em;
+  margin-top: 10px;
+}
+
+.new-tweet__red {
+  color: layout.$red;
+}
+
+.new-tweet__black {
+  color: layout.$black;
+}
+
+.new-tweet__error {
+  color: layout.$red;
+  font-size: 22px;
+  background-color: layout.$light-red;
+  width: 100%;
+  position: absolute;
+  border: 3px solid layout.$red;
+  vertical-align: middle;
+  padding: 5px 10px;
+  line-height: 1.5em;
+}
+
+.new-tweet__error > .fas {
+  color: layout.$red;
+}

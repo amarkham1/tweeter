@@ -1,0 +1,93 @@
+@use 'layout';
+
+.nav {
+  height: 170px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+  background-color: layout.$orange;
+  color: white;
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+}
+
+.nav__container {
+  display: flex;
+  flex-direction: column;
+  width: 950px;
+}
+
+.nav__bungee {
+  font-family: 'Bungee', cursive;
+  font-size: 32px;
+  line-height: 1.5em;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 2px solid #f4f1ec;
+  padding-bottom: 10px;
+}
+
+.nav__new-tweet {
+  font-size: 18px;
+}
+
+.nav__new-tweet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px 0 10px;
+}
+
+.nav__new-tweet-container:hover {
+  cursor: pointer;
+}
+
+.nav__new-tweet-container:hover .fa-angle-double-down {
+  -webkit-animation: mover 0.5s infinite  alternate;
+  animation: mover 0.5s infinite  alternate;
+}
+
+.nav__new-tweet-container:hover .nav__new-tweet > strong {
+  color: layout.$red;
+}
+
+.fa-angle-double-down {
+  padding-top: 3px;
+  color: layout.$red;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+@media (min-width: 500px) {
+  .nav__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav {
+    height: 120px;
+  }
+  .nav__new-tweet {
+    font-size: 24px;
+  }
+  .nav__bungee {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .nav__new-tweet-container {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    background-color: layout.$blue;
+    background-image: none;
+  }
+}

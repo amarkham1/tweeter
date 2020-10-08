@@ -6,19 +6,16 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,26 +55,34 @@ main {
   color: white;
 }
 
+@media (min-width: 500px) {
+  body {
+    font-size: 24px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .content-container {
     width: calc(100% - 60px);
     display: flex;
     flex-direction: row;
   }
+
   .container {
     width: calc(60% - 3.5%);
     margin: 120px 0 0 3.5%;
   }
 }
-
 @media (min-width: 1024px) {
   .content-container {
     width: 950px;
     display: flex;
     flex-direction: row;
   }
+
   .container {
     width: calc(60% - 35px);
     margin: 120px 0 0 35px;
   }
 }
+
+/*# sourceMappingURL=layout.css.map */

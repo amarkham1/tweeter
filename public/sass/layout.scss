@@ -1,3 +1,11 @@
+$font-stack: 'Source Sans Pro', sans-serif;
+$black: #545149;
+$off-white: #f4f1ec;
+$orange: #fca000;
+$blue: #4056a1;
+$red: #c33;
+$light-red: #fee;
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -6,16 +14,15 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color:$black;
+  background-color: $off-white;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-stack;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +36,7 @@ main {
   width: calc(100% - 50px);
   margin-left: auto;
   margin-right: auto;
-  background-color: #f4f1ec;
+  background-color: $off-white;
 }
 
 .container {
@@ -60,76 +67,27 @@ main {
     font-size: 24px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .content-container {
     width: calc(100% - 60px);
     display: flex;
     flex-direction: row;
   }
-
   .container {
     width: calc(60% - 3.5%);
     margin: 120px 0 0 3.5%;
   }
 }
+
 @media (min-width: 1024px) {
   .content-container {
     width: 950px;
     display: flex;
     flex-direction: row;
   }
-
   .container {
     width: calc(60% - 35px);
     margin: 120px 0 0 35px;
   }
 }
-.main-header {
-  height: 220px;
-  width: 100%;
-  margin-top: 170px;
-  background-color: #fca000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-}
-
-.main-header__name {
-  justify-content: center;
-  font-size: 18px;
-}
-
-.main-header__profile {
-  width: 150px;
-}
-
-@media (min-width: 500px) {
-  .main-header {
-    margin-top: 120px;
-    height: 340px;
-  }
-
-  .main-header__name {
-    font-size: 28px;
-  }
-
-  .main-header__profile {
-    width: auto;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .main-header {
-    width: calc(40% - 3.5%);
-    margin: 200px 3.5% 0 0;
-  }
-}
-@media (min-width: 1024px) {
-  .main-header {
-    width: calc(40% - 35px);
-    margin: 200px 35px 0 0;
-  }
-}
-
-/*# sourceMappingURL=header.css.map */
