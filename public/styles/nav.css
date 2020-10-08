@@ -55,7 +55,7 @@ main {
   color: white;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   body {
     font-size: 24px;
   }
@@ -101,7 +101,6 @@ main {
 .nav__container {
   display: flex;
   flex-direction: column;
-  width: 950px;
 }
 
 .nav__bungee {
@@ -115,7 +114,7 @@ main {
 }
 
 .nav__new-tweet {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .nav__new-tweet-container {
@@ -128,12 +127,10 @@ main {
 .nav__new-tweet-container:hover {
   cursor: pointer;
 }
-
 .nav__new-tweet-container:hover .fa-angle-double-down {
   -webkit-animation: mover 0.5s infinite alternate;
   animation: mover 0.5s infinite alternate;
 }
-
 .nav__new-tweet-container:hover .nav__new-tweet > strong {
   color: #c33;
 }
@@ -151,10 +148,11 @@ main {
     transform: translateY(-5px);
   }
 }
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .nav__container {
     flex-direction: row;
     justify-content: space-between;
+    width: 950px;
   }
 
   .nav {

@@ -17,7 +17,6 @@
 .nav__container {
   display: flex;
   flex-direction: column;
-  width: 950px;
 }
 
 .nav__bungee {
@@ -26,12 +25,12 @@
   line-height: 1.5em;
   vertical-align: middle;
   text-align: center;
-  border-bottom: 2px solid #f4f1ec;
+  border-bottom: 2px solid layout.$off-white;
   padding-bottom: 10px;
 }
 
 .nav__new-tweet {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .nav__new-tweet-container {
@@ -43,15 +42,15 @@
 
 .nav__new-tweet-container:hover {
   cursor: pointer;
-}
 
-.nav__new-tweet-container:hover .fa-angle-double-down {
-  -webkit-animation: mover 0.5s infinite  alternate;
-  animation: mover 0.5s infinite  alternate;
-}
+  .fa-angle-double-down {
+    -webkit-animation: mover 0.5s infinite  alternate;
+    animation: mover 0.5s infinite  alternate;
+  }
 
-.nav__new-tweet-container:hover .nav__new-tweet > strong {
-  color: layout.$red;
+  .nav__new-tweet > strong {
+    color: layout.$red;
+  }
 }
 
 .fa-angle-double-down {
@@ -68,6 +67,7 @@
   .nav__container {
     flex-direction: row;
     justify-content: space-between;
+    width: 950px;
   }
   .nav {
     height: 120px;

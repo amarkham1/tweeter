@@ -55,7 +55,7 @@ main {
   color: white;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   body {
     font-size: 24px;
   }
@@ -117,7 +117,7 @@ main {
 .tweet__article-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin: 20px 10px 30px 10px;
 }
 
@@ -155,7 +155,7 @@ main {
   color: #719de3;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .tweet__article-header {
     flex-direction: row;
     justify-content: space-between;
