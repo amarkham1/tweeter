@@ -28,7 +28,12 @@
 }
 
 .nav__new-tweet {
+  border: none;
+  background-color: $blue;
+  color: $off-white;
+  text-decoration: none;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .nav__new-tweet-container {
@@ -38,7 +43,7 @@
 
 .nav__new-tweet-container:hover {
   cursor: pointer;
-
+  
   .fa-angle-double-down {
     -webkit-animation: mover 0.5s infinite  alternate;
     animation: mover 0.5s infinite  alternate;

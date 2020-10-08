@@ -18,6 +18,11 @@
   background-color: #4056a1;
   border: 0;
   color: white;
+  cursor: pointer;
+}
+
+.new-tweet__button:hover {
+  color: #c33;
 }
 
 .new-tweet__container {

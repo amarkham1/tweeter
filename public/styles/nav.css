@@ -84,7 +84,12 @@
 }
 
 .nav__new-tweet {
+  border: none;
+  background-color: #4056a1;
+  color: #f4f1ec;
+  text-decoration: none;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .nav__new-tweet-container {

@@ -17,6 +17,11 @@
   background-color: $blue;
   border: 0;
   color: white;
+  cursor: pointer;
+}
+
+.new-tweet__button:hover {
+  color: $red;
 }
 
 .new-tweet__container {
