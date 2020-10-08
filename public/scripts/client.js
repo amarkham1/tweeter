@@ -22,6 +22,9 @@ $(document).ready(() => {
       $.ajax('/tweets/', { method: 'POST', data })
         .then(function(newTweet) {
           reloadAndResetCounter();
+        })
+        .fail(function () {
+          console.log("Couldn't submit a new tweet");
         });
     }
   });

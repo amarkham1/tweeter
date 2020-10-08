@@ -10,6 +10,9 @@ const loadTweets = function() {
     .then(function(tweets) {
       const sortedTweets = sortTweetsByCreationDate(tweets);
       renderTweets(sortedTweets);
+    })
+    .fail(function() {
+      console.log("Couldn't get tweets from the database");
     });
 };
 
