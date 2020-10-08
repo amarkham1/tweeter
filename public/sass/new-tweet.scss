@@ -2,7 +2,7 @@
 
 .new-tweet {
   width: 100%;
-  margin: 20px 40px 60px 40px;
+  margin: 20px 40px 40px 40px;
   position: relative;
 }
 
@@ -21,7 +21,7 @@
 
 .new-tweet__container {
   @include flexbox(column, space-between, normal);
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 #tweet-text {
@@ -45,7 +45,7 @@
 
 .new-tweet__error {
   color: $red;
-  font-size: 22px;
+  font-size: 16px;
   background-color: $light-red;
   width: 100%;
   position: absolute;
@@ -57,4 +57,16 @@
 
 .new-tweet__error > .fas {
   color: $red;
+}
+
+@media (min-width: 600px) {
+  .new-tweet {
+    margin-bottom: 60px;
+  }
+  .new-tweet__error {
+    font-size: 22px;
+  }
+  .new-tweet__container {
+    margin-top: 100px;
+  }
 }
