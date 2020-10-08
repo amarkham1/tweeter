@@ -11,6 +11,12 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Screenshots
+
+!["Page view on large screen"](https://github.com/amarkham1/tweeter/blob/master/docs/Desktop-Large.png?raw=true)
+!["View from mobile user"](https://github.com/amarkham1/tweeter/blob/master/docs/Mobile.png?raw=true)
+!["View from tablet user"](https://github.com/amarkham1/tweeter/blob/master/docs/Tablet-Portrait.png?raw=true)
+
 ## Dependencies
 
 - Express
