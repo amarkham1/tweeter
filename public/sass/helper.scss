@@ -1,0 +1,14 @@
+$font-stack: 'Source Sans Pro', sans-serif;
+$black: #545149;
+$off-white: #f4f1ec;
+$orange: #fca000;
+$blue: #4056a1;
+$red: #c33;
+$light-red: #fee;
+
+@mixin flexbox($flex-direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

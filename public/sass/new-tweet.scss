@@ -1,4 +1,4 @@
-@use 'layout';
+@import 'helper';
 
 .new-tweet {
   width: 100%;
@@ -7,56 +7,54 @@
 }
 
 .new-tweet__submit-container {
+  @include flexbox(row, space-between, center);
   font-family: 'Bungee', cursive;
   font-size: 20px;
-  display: flex;
-  justify-content: space-between;
   margin: 20px 0 10px 0;
 }
 
 .new-tweet__button {
-  background-color: layout.$blue;
+  background-color: $blue;
   border: 0;
   color: white;
 }
 
 .new-tweet__container {
-  display: flex;
-  flex-direction: column;
+  @include flexbox(column, space-between, normal);
   margin-top: 100px;
 }
 
 #tweet-text {
   border-width: 0 0 3px 0;
   border-style: solid;
-  border-color: layout.$black;
-  background-color: layout.$off-white;
+  border-color: $black;
+  background-color: $off-white;
   resize: none;
   outline: none;
-  height: 1em;
+  height: 2.5rem;
   margin-top: 10px;
 }
 
 .new-tweet__red {
-  color: layout.$red;
+  color: $red;
 }
 
 .new-tweet__black {
-  color: layout.$black;
+  color: $black;
 }
 
 .new-tweet__error {
-  color: layout.$red;
+  color: $red;
   font-size: 22px;
-  background-color: layout.$light-red;
+  background-color: $light-red;
   width: 100%;
   position: absolute;
-  border: 3px solid layout.$red;
+  border: 3px solid $red;
   vertical-align: middle;
   padding: 5px 10px;
   line-height: 1.5em;
 }
 
 .new-tweet__error > .fas {
-  color: layout.$red;
+  color: $red;
 }

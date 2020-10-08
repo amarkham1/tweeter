@@ -1,93 +1,10 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.content-container {
-  width: 100%;
-}
-
-main {
-  width: calc(100% - 50px);
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f4f1ec;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.button-to-top {
-  background-color: #c33;
-  border: 0;
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  position: fixed;
-  bottom: 10%;
-  right: 10%;
-  cursor: pointer;
-  outline: none;
-}
-
-.fa-angle-double-up {
-  color: white;
-}
-
-@media (min-width: 600px) {
-  body {
-    font-size: 24px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .content-container {
-    width: calc(100% - 60px);
-    display: flex;
-    flex-direction: row;
-  }
-
-  .container {
-    width: calc(60% - 3.5%);
-    margin: 120px 0 0 3.5%;
-  }
-}
-@media (min-width: 1024px) {
-  .content-container {
-    width: 950px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .container {
-    width: calc(60% - 35px);
-    margin: 120px 0 0 35px;
-  }
-}
 .all-tweets-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   margin: 0 40px 40px 40px;
-  display: flex;
 }
 
 .all-tweets {
@@ -96,12 +13,13 @@ main {
 }
 
 .tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-between;
   width: 100%;
   padding: 0 15px;
   border: 3px solid #545149;
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
   font-weight: 300;
   margin: 0 0 20px 0;
 }
@@ -117,6 +35,7 @@ main {
 .tweet__article-header {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   margin: 20px 10px 30px 10px;
 }
@@ -127,13 +46,17 @@ main {
 
 .tweet__user {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .tweet__handle {
-  font-size: 16px;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  font-size: 16px;
 }
 
 .tweet__body {
@@ -147,6 +70,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin: 0px 10px 20px 10px;
   font-size: 14px;
 }
@@ -157,8 +81,10 @@ main {
 
 @media (min-width: 600px) {
   .tweet__article-header {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   .tweet__handle {

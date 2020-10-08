@@ -1,10 +1,4 @@
-$font-stack: 'Source Sans Pro', sans-serif;
-$black: #545149;
-$off-white: #f4f1ec;
-$orange: #fca000;
-$blue: #4056a1;
-$red: #c33;
-$light-red: #fee;
+@import 'helper';
 
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
@@ -19,13 +13,11 @@ html {
 }
 
 body {
+  @include flexbox(column, flex-start, center);
   color:$black;
   background-color: $off-white;
   font-size: 18px;
   font-family: $font-stack;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .content-container {
@@ -40,9 +32,7 @@ main {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexbox(column, flex-start, center);
 }
 
 .button-to-top {
@@ -70,9 +60,8 @@ main {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .content-container {
+    @include flexbox(row, center, flex-start);
     width: calc(100% - 60px);
-    display: flex;
-    flex-direction: row;
   }
   .container {
     width: calc(60% - 3.5%);
@@ -82,9 +71,8 @@ main {
 
 @media (min-width: 1024px) {
   .content-container {
+    @include flexbox(row, center, flex-start);
     width: 950px;
-    display: flex;
-    flex-direction: row;
   }
   .container {
     width: calc(60% - 35px);

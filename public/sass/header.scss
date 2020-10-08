@@ -1,14 +1,11 @@
-@use 'layout';
+@import 'helper';
 
 .main-header {
+  @include flexbox(column, center, center);
   height: 220px;
   width: 100%;
   margin-top: 170px;
-  background-color: layout.$orange;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  background-color: $orange;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
 }
 

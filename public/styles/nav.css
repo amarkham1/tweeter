@@ -1,90 +1,60 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+.main-header {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-.content-container {
+  height: 220px;
   width: 100%;
+  margin-top: 170px;
+  background-color: #fca000;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
 }
 
-main {
-  width: calc(100% - 50px);
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f4f1ec;
+.main-header__name {
+  justify-content: center;
+  font-size: 18px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.button-to-top {
-  background-color: #c33;
-  border: 0;
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  position: fixed;
-  bottom: 10%;
-  right: 10%;
-  cursor: pointer;
-  outline: none;
-}
-
-.fa-angle-double-up {
-  color: white;
+.main-header__profile {
+  width: 150px;
 }
 
 @media (min-width: 600px) {
-  body {
-    font-size: 24px;
+  .main-header {
+    margin-top: 120px;
+    height: 340px;
+  }
+
+  .main-header__name {
+    font-size: 28px;
+  }
+
+  .main-header__profile {
+    width: auto;
+  }
+}
+@media (min-width: 600px) {
+  .main-header {
+    height: 350px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .content-container {
-    width: calc(100% - 60px);
-    display: flex;
-    flex-direction: row;
-  }
-
-  .container {
-    width: calc(60% - 3.5%);
-    margin: 120px 0 0 3.5%;
+  .main-header {
+    width: calc(40% - 3.5%);
+    margin: 200px 3.5% 0 0;
   }
 }
 @media (min-width: 1024px) {
-  .content-container {
-    width: 950px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .container {
-    width: calc(60% - 35px);
-    margin: 120px 0 0 35px;
+  .main-header {
+    width: calc(40% - 35px);
+    margin: 200px 35px 0 0;
   }
 }
 .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 170px;
   width: 100%;
   position: fixed;
@@ -93,14 +63,14 @@ main {
   background-color: #fca000;
   color: white;
   padding: 1.5em;
-  display: flex;
-  justify-content: center;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
 }
 
 .nav__container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav__bungee {
@@ -120,6 +90,7 @@ main {
 .nav__new-tweet-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 10px 10px 0 10px;
 }

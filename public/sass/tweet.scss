@@ -1,9 +1,9 @@
-@use 'layout';
+@import 'helper';
 
 .all-tweets-container {
+  @include flexbox(column, flex-start, center);
   width: 100%;
   margin: 0 40px 40px 40px;
-  display: flex;
 }
 
 .all-tweets {
@@ -12,18 +12,16 @@
 }
 
 .tweet {
+  @include flexbox(column, flex-start, space-between);
   width: 100%;
   padding: 0 15px;
-  border: 3px solid layout.$black;
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
+  border: 3px solid $black;
   font-weight: 300;
   margin: 0 0 20px 0;
 }
 
 .tweet:hover {
-  box-shadow: 8px 8px layout.$blue;
+  box-shadow: 8px 8px $blue;
 }
 
 .tweet:hover .tweet__handle{
@@ -31,9 +29,7 @@
 }
 
 .tweet__article-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  @include flexbox(column, center, flex-start);
   margin: 20px 10px 30px 10px;
 }
 
@@ -42,27 +38,23 @@
 }
 
 .tweet__user {
-  display: flex;
-  align-items: center;
+  @include flexbox(row, flex-start, center);
 }
 
 .tweet__handle {
+  @include flexbox(row, center, center);
   font-size: 16px;
-  display: flex;
-  align-items: center;
 }
 
 .tweet__body {
-  border-bottom: 3px solid layout.$black;
+  border-bottom: 3px solid $black;
   padding: 0 10px 15px 10px;
   margin-bottom: 20px;
   word-wrap: break-word;
 }
 
 .tweet__article-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flexbox(row, space-between, center);
   margin: 0px 10px 20px 10px;
   font-size: 14px;
 }
@@ -73,8 +65,7 @@
 
 @media (min-width: 600px) {
   .tweet__article-header {
-    flex-direction: row;
-    justify-content: space-between;
+    @include flexbox(row, space-between, center);
   }
   .tweet__handle {
     font-size: 22px;
