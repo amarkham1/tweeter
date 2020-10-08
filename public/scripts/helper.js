@@ -82,3 +82,11 @@ const timeSinceDate = dateInMS => {
     return "";
   }
 };
+
+const getErrorHTML = message => {
+  return $(`<div class="new-tweet__error">
+            <i class="fas fa-exclamation-triangle"></i>
+            ${message}
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>`);
+}
